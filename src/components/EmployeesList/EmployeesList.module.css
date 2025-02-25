@@ -1,0 +1,19 @@
+.listContainer {
+    display: grid;
+}
+
+.loading,
+.error {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin: 2rem;
+}
+
+.error {
+    background: #ffe3e6;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}

@@ -1,0 +1,9 @@
+.root-container {
+    background-color: var(--gray-00);
+    margin: 0 auto;
+    height: 100%;
+}
+
+.content {
+    padding: 1rem var(--page-padding);
+}

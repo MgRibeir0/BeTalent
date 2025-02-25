@@ -1,0 +1,99 @@
+.container {
+    background: var(--bluePrimary);
+    display: grid;
+    /* No mobile, apenas 3 colunas: FOTO | NOME | . (ponto) */
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: start;
+    padding: 0.6rem 1rem;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    border-radius: 8px 8px 0 0;
+}
+
+/* --------------------------------------------------------
+   BASE (Mobile)
+   -------------------------------------------------------- */
+
+.columnPhoto,
+.columnName,
+.columnJob,
+.columnDate,
+.columnPhone {
+    color: var(--white);
+    font-size: 0.875rem;
+    text-align: center;
+    display: none; /* Esconde tudo por padrão */
+}
+
+.columnPhoto,
+.columnName {
+    display: block; /* Exibe só Foto e Nome no mobile */
+}
+
+.columnPhoto {
+    grid-column: 1; /* Primeira coluna (mobile) */
+    justify-self: start;
+    margin-right: 1.5rem;
+}
+
+.columnName {
+    grid-column: 2; /* Segunda coluna (mobile) */
+    justify-self: start;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mobileDot {
+    grid-column: 3; /* Terceira coluna (mobile) */
+    color: var(--white);
+    justify-self: end;
+    margin-left: auto;
+}
+
+/* --------------------------------------------------------
+   DESKTOP (>= 768px)
+   -------------------------------------------------------- */
+@media (min-width: 768px) {
+    .container {
+        /* Agora sim 5 colunas: Foto | Nome | Cargo | Data | Telefone */
+        grid-template-columns: 1fr 2fr 2fr 2fr 1.5fr;
+        gap: 1rem;
+        height: 3.5rem;
+        padding: 0 2rem;
+    }
+
+    /* Mostra todas as colunas no desktop */
+    .columnPhoto,
+    .columnName,
+    .columnJob,
+    .columnDate,
+    .columnPhone {
+        display: block;
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    /* Some com o pontinho no desktop */
+    .mobileDot {
+        display: none;
+    }
+
+    /* Mapeamento das colunas no desktop */
+    .columnPhoto {
+        grid-column: 1;
+    }
+    .columnName {
+        grid-column: 2;
+    }
+    .columnJob {
+        grid-column: 3;
+    }
+    .columnDate {
+        grid-column: 4;
+    }
+    .columnPhone {
+        grid-column: 5;
+    }
+}
