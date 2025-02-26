@@ -25,6 +25,8 @@ Para rodar o projeto, você precisará ter instalado em sua máquina:
 
 - [Bun](https://bun.sh/) (ou algum outro gerenciador de pacotes como npm ou yarn)
 
+Para saber o motivo de usar Bun, escrevi sobre a escolha [aqui](./BUN.md)
+
 - Json-server – `bun add json-server` (ou com outros gerenciadores de pacote)
 # Instruções para Rodar a Aplicação
 
@@ -107,6 +109,6 @@ Caso a porta esteja ocupada, confira o terminal.
 - React.js – Biblioteca para construção da interface.
 - Typescript – Superset do Javascript que permite a inserção de tipos para garantir a consistencia dos dados.
 - Vite – Ferramenta de build e desenvolvimento rápido.
-- Bun – Gerenciador de pacotes moderno e ultra veloz escrito em Rust.
+- Bun – Gerenciador de pacotes moderno e ultra veloz escrito em Zig.
 - json-server – Pacote para servir os dados .json como uma API.
 - CSS Modules – Para escopo e organização dos estilos de maneira local, sem sobrescrever outros estilos.
