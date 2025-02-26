@@ -1,6 +1,9 @@
+
+# Teste prático BeTalent
+
 Desafio Front-End – Tabela de Funcionários
 
-Esta aplicação foi desenvolvida para exibir uma tabela (ou lista) de funcionários com os seguintes dados:
+Esta aplicação foi desenvolvida para exibir uma tabela de funcionários com os seguintes dados:
 
     Imagem (thumb do/a usuário/a)
     Nome
@@ -11,82 +14,99 @@ Esta aplicação foi desenvolvida para exibir uma tabela (ou lista) de funcioná
 Além disso, o projeto permite a pesquisa na tabela por meio de um input, filtrando os funcionários por cargo, nome e telefone. As formatações de datas e telefones são realizadas no front-end.
 
 A aplicação possui um layout responsivo com abordagem mobile-first, onde no mobile os dados são apresentados em formato de cards com accordion e, no desktop, são exibidos em um layout de tabela alinhada.
-Pré-requisitos
+
+# Pré-requisitos
 
 Para rodar o projeto, você precisará ter instalado em sua máquina:
 
-    Git – para clonar o repositório.
-    Node.js – versão recomendada 14 ou superior.
-    Bun – para gerenciamento e execução dos scripts (utilizando Vite + Bun).
-    Yarn ou outro gerenciador de pacotes (opcional, conforme sua preferência).
-    json-server – para simular a API (pode ser instalado globalmente ou utilizado via npx/yarn).
+- Git – para clonar o repositório.
 
-Instruções para Rodar a Aplicação
+- Node.js – versão recomendada 18 ou superior.
 
-    Clone o repositório
+- [Bun](https://bun.sh/) (ou algum outro gerenciador de pacotes como npm ou yarn)
 
-git clone <link-do-repositorio>
-cd <nome-da-pasta-do-projeto>
+- Json-server – `bun add json-server` (ou com outros gerenciadores de pacote)
+# Instruções para Rodar a Aplicação
 
-Instale as dependências
+1. Clone o repositório
 
-Se estiver utilizando Bun:
+```
+git clone https://github.com/MgRibeir0/BeTalent.git
+cd BeTalent
+```
 
-bun install
+2. Instale as dependências
+
+Se estiver usando bun:
+
+`bun install`
 
 Ou, alternativamente, se preferir Yarn ou npm:
 
+```
 yarn install
 # ou
 npm install
+```
 
-Inicie o json-server
+3. Inicie o json-server
 
-O arquivo db.json que simula a API está localizado na raiz do projeto. Para iniciá-lo, execute:
+`json-server --watch db.json`
 
-json-server --watch db.json
+Caso tenha problemas, use um gerenciador de pacotes:
 
-Caso encontre problemas, tente:
+Bun (Recomendado):
 
-npx json-server --watch db.json
+`bunx json-server --watch db.json`
 
-ou
+npx:
 
-yarn json-server --watch db.json
+`npx json-server --watch db.json`
 
-Inicie a aplicação
+yarn:
 
-Se estiver utilizando Bun com Vite:
+`yarn json-server --watch db.json`
 
-bun run dev
+4. Inicie a Aplicação
 
-Ou, se estiver utilizando outro gerenciador:
+`bun run dev`
 
-    yarn dev
-    # ou
-    npm run dev
+Ou, se estiver usando outro gerenciador:
 
-    Acesse a aplicação
+```
+npm run dev
+# ou
+yarn dev
+```
 
-    Abra seu navegador e acesse a URL indicada no terminal (geralmente http://localhost:3000 ou http://localhost:5173).
+5. Acesse a aplicação
 
-Estrutura do Projeto
+Normalmente, ela estará na porta 5173:
 
-    /src: Contém os componentes React, estilos (CSS/Module CSS) e demais arquivos do front-end.
-    db.json: Arquivo de dados utilizado pelo json-server para simulação da API.
-    README.md: Este arquivo com as informações sobre o projeto, pré-requisitos e instruções para rodar a aplicação.
+`http://localhost:5173`
 
-Tecnologias Utilizadas
+Caso a porta esteja ocupada, confira o terminal.
 
-    React.js – Biblioteca para construção da interface.
-    Vite – Ferramenta de build e desenvolvimento rápido.
-    Bun – Ambiente de execução e gerenciamento de pacotes.
-    TypeScript – (Opcional) Utilizado para melhorar a robustez do código.
-    json-server – API simulada para fornecer os dados dos funcionários.
-    CSS Modules – Para escopo e organização dos estilos.
 
-Considerações Finais
+---
 
-    Responsividade: O layout foi desenvolvido com abordagem mobile-first, garantindo uma ótima experiência tanto em dispositivos móveis quanto em desktops.
-    Pesquisa: A barra de pesquisa permite filtrar os dados exibidos na tabela/carta em tempo real, considerando os campos de cargo, nome e telefone.
-    Formatação: Datas e telefones são formatados no front-end para exibição adequada.
+# Estrutura do projeto
+
+- public/: Aqui vivem todos os arquivos que serão utilizados pela aplicação e necessitam de acesso direto e sem compilação. (E.g. favicon)
+
+- /src: Aqui é onde vive o código React do projeto, aqui estão os componentes, estilos e tipos
+
+- /src/components: Aqui estão todos os componentes React que compõem o site. Cada componente possui um arquivo .tsx e um aquivo .module.css
+
+- /src/styles: Arquivos css globais e não específicos, como o reset do css e estilos globais.
+
+---
+
+# Tecnologias Utilizadas
+
+- React.js – Biblioteca para construção da interface.
+- Typescript – Superset do Javascript que permite a inserção de tipos para garantir a consistencia dos dados.
+- Vite – Ferramenta de build e desenvolvimento rápido.
+- Bun – Gerenciador de pacotes moderno e ultra veloz escrito em Rust.
+- json-server – Pacote para servir os dados .json como uma API.
+- CSS Modules – Para escopo e organização dos estilos de maneira local, sem sobrescrever outros estilos.
